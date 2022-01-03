@@ -5,6 +5,8 @@ import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 
+import Loader from "./Loader";
+
 const { Text, Title } = Typography;
 const { Option } = Select;
 
@@ -19,9 +21,7 @@ const News = ({ simplified }) => {
     });
     const { data } = useGetCryptosQuery(100);
 
-    // console.log(cryptoNews)
-
-    if (!cryptoNews?.value) return "Loading ...";
+    if (!cryptoNews?.value) return <Loader />;
 
     return (
         <Row gutter={[24, 24]}>
@@ -40,7 +40,9 @@ const News = ({ simplified }) => {
                         }
                     >
                         <Option value="Cryptocurrency">Cryptocurrency</Option>
-                        {data?.data?.coins.map((coin)=> <option value={coin.name}>{coin.name}</option> )}
+                        {data?.data?.coins.map((coin) => (
+                            <option value={coin.name}>{coin.name}</option>
+                        ))}
                     </Select>
                 </Col>
             )}
@@ -86,7 +88,7 @@ const News = ({ simplified }) => {
                                     </Text>
                                 </div>
                                 <Text>
-                                    {moment(news.datePuplished)
+                                    {moment(news.datePublished)
                                         .startOf("ss")
                                         .fromNow()}
                                 </Text>
