@@ -1,17 +1,17 @@
 import React from "react";
-import millify from "millify";
-import { Col, Row, Collapse, Typography, Avatar } from "antd";
-import HTMLReactParser from "html-react-parser";
+// import millify from "millify";
+import { Col, Row } from "antd";
+// import HTMLReactParser from "html-react-parser";
 
 import { useGetExchangesQuery } from "../services/cryptoApi";
 import Loader from "./Loader";
 
-const { Text } = Typography;
-const { Panel } = Collapse;
+// const { Text } = Typography;
+// const { Panel } = Collapse;
 
 const Exchanges = () => {
     const { data, isFetching } = useGetExchangesQuery();
-    const exchangesLIst = data?.data?.exchanges;
+    // const exchangesLIst = data?.data?.exchanges;
 
     if (isFetching) return <Loader />;
 
