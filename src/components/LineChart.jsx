@@ -16,29 +16,31 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
             ).toLocaleDateString()
         );
     }
-    
+
     const data = {
+        
         labels: coinTimestamp,
         datasets: [
             {
+                type:'bar',
                 label: "Price In USD",
                 data: coinPrice,
-                fill: false,
-                backgroundColor: "#0071bd",
-                borderColor: "#0071bd",
+                fill: true,
+                backgroundColor: [
+                    "rgba(75, 99, 232, 0.7)",
+                    "rgba(54, 162, 235, 0.2)",
+                ],
+                borderColor: ["rgba(20, 255, 132, 1)"],
+                borderWidth: 0.5,
             },
         ],
     };
 
     const options = {
         scales: {
-            yAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true,
-                    },
-                },
-            ],
+            y: {
+                beginAtZero: false,
+            },
         },
     };
 
@@ -57,7 +59,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
                     </Title>
                 </Col>
             </Row>
-
             <Line data={data} options={options} />
         </>
     );

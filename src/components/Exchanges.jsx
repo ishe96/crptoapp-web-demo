@@ -15,6 +15,7 @@ const Exchanges = () => {
 
     if (isFetching) return <Loader />;
 
+    console.log(data)
     return (
         <>
             <Row>
@@ -24,12 +25,12 @@ const Exchanges = () => {
                 <Col span={6}>Change</Col>
             </Row>
 
-            <Row>
+            {/* <Row>
                 {exchangesLIst.map((exchange) => (
                     <Col span={24}>
                         <Collapse>
                             <Panel
-                                key={exchange.id}
+                                key={exchange.uuid}
                                 showArrow={false}
                                 header={(
                                     <>
@@ -64,7 +65,7 @@ const Exchanges = () => {
                         </Collapse>
                     </Col>
                 ))}
-            </Row>
+            </Row> */}
         </>
     );
 };
