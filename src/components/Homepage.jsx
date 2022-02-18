@@ -24,34 +24,74 @@ const Homepage = () => {
             </Title>
             <Row gutter={[32, 32]}>
                 <Col span={12}>
-                    <Statistic
-                        title="Total Cryptocurrencies"
-                        value={globalStats.total}
-                    />
+                    <div
+                        style={{
+                            backgroundColor: "#c4c4c4",
+                            padding: 10,
+                            borderRadius: 5,
+                        }}
+                    >
+                        <Statistic
+                            title="Total Coins"
+                            value={globalStats.total}
+                        />
+                    </div>
                 </Col>
                 <Col span={12}>
-                    <Statistic
-                        title="Total Exchanges"
-                        value={millify(globalStats.totalExchanges)}
-                    />
+                    <div
+                        style={{
+                            backgroundColor: "#c4c4c4",
+                            padding: 10,
+                            borderRadius: 5,
+                        }}
+                    >
+                        <Statistic
+                            title="Total Exchanges"
+                            value={millify(globalStats.totalExchanges)}
+                        />
+                    </div>
                 </Col>
                 <Col span={12}>
-                    <Statistic
-                        title="Total Market Cap:"
-                        value={`$${millify(globalStats.totalMarketCap)}`}
-                    />
+                    <div
+                        style={{
+                            backgroundColor: "#c4c4c4",
+                            padding: 10,
+                            borderRadius: 5,
+                        }}
+                    >
+                        <Statistic
+                            title="Total Market Cap:"
+                            value={`$${millify(globalStats.totalMarketCap)}`}
+                        />
+                    </div>
                 </Col>
                 <Col span={12}>
-                    <Statistic
-                        title="Total 24h Volume"
-                        value={`$${millify(globalStats.total24hVolume)}`}
-                    />
+                    <div
+                        style={{
+                            backgroundColor: "#c4c4c4",
+                            padding: 10,
+                            borderRadius: 5,
+                        }}
+                    >
+                        <Statistic
+                            title="Total 24h Volume"
+                            value={`$${millify(globalStats.total24hVolume)}`}
+                        />
+                    </div>
                 </Col>
                 <Col span={12}>
-                    <Statistic
-                        title="Total Markets"
-                        value={millify(globalStats.totalMarkets)}
-                    />
+                    <div
+                        style={{
+                            backgroundColor: "#c4c4c4",
+                            padding: 10,
+                            borderRadius: 5,
+                        }}
+                    >
+                        <Statistic
+                            title="Total Markets"
+                            value={millify(globalStats.totalMarkets)}
+                        />
+                    </div>
                 </Col>
             </Row>
 
